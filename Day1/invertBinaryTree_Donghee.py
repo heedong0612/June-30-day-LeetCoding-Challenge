@@ -7,14 +7,13 @@
 class Solution(object):
     
     def invertHelper(self, root):
-        if (root == NULL):
+        if (root == None):
             return root
         
         temp = root.left
-        root.left = invertHelper(root.right)
-        root.right = invertHelper(temp)
-        
-        
+        root.left = self.invertHelper(root.right)
+        root.right = self.invertHelper(temp)
+             
         return root
         
     
@@ -23,5 +22,5 @@ class Solution(object):
         :type root: TreeNode
         :rtype: TreeNode
         """
-        return invertHelper(root)
+        return self.invertHelper(root)
         
