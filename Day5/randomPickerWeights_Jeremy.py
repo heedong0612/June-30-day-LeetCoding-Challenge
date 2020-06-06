@@ -8,33 +8,33 @@ class Solution:
         for i, weight in enumerate(self.w):
             tot += weight
             self.w[i] = tot
+        self.totalWeight = tot
 
     def pickIndex(self) -> int:
         '''
         Passed 99% of test
         Fails in stress test :(
         '''
-        # w[0] = weight of index 0
-        totalWeight = self.w[-1]
-        r = randint(0, totalWeight)
-        print(f'r: {r}')
+        r = randint(0, self.totalWeight - 1)
         left, right = 0, len(self.w) - 1
-        ans = -1
-        if r == totalWeight:
+        
+        if r == self.totalWeight:
             return len(self.w) - 1
+        if r == 0:
+            return 0
+        
         
         # binary search sol
-        while(left <= right):
+        while(left < right):
             mid = left + (right - left) // 2
             if r < self.w[mid]:
-                ans = mid
-                right = mid - 1
+                right = mid
             else:
                 left = mid + 1
-        return ans
+        return right
         
         # linear sol
-        for i, weight in enumerate(self.w):
-            # tot += weight
-            if r <= weight:
-                return i
+#         for i, weight in enumerate(self.w):
+#             # tot += weight
+#             if r <= weight:
+#                 return i
