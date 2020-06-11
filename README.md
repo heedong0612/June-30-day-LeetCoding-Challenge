@@ -1,2 +1,3 @@
 # June-30-day-LeetCoding-Challenge
-our leetcode challenge hehe :D
+our leetcode challenge for JUNe hehe :D
+- Jun, Jer, Donghee <3
