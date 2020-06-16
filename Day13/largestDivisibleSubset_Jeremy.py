@@ -8,7 +8,7 @@ def largestDivisibleSubset(nums: List[int]) -> List[int]:
             for j in range(i + 1, len(nums)):
                 dp[i][j] = nums[j] % nums[i] == 0
         
-        for i in range(1, len(nums) - 1):
+        for i in range(1,len(nums) - 1):
             for j in range(i + 1, len(nums)):
                 if dp[i][j]:
 
