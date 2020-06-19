@@ -53,8 +53,6 @@ def validIPAddress(IP: str) -> str:
             return False
 
         for numString in ipArr:
-            n = 0
-
             # each group has to be in a one to four hexabit format
             if len(numString) > 4 or len(numString) == 0:
                 return False
@@ -64,7 +62,7 @@ def validIPAddress(IP: str) -> str:
             
             try:
                 # must be valid 16 bit format
-                n = int(numString, 16)
+                int(numString, 16)
             except:
                 return False
             
